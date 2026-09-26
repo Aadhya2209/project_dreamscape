@@ -1,0 +1,1 @@
+ALTER TABLE public.dreams ADD COLUMN IF NOT EXISTS is_lucid boolean NOT NULL DEFAULT false;

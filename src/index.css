@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dreamscape Design System - Cosmic and ethereal theme 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base cosmic colors */
+    --background: 243 50% 6%;
+    --foreground: 280 30% 95%;
+
+    /* Glass morphism cards */
+    --card: 260 30% 12%;
+    --card-foreground: 280 20% 92%;
+
+    --popover: 260 30% 12%;
+    --popover-foreground: 280 20% 92%;
+
+    /* Cosmic purple primary */
+    --primary: 270 60% 55%;
+    --primary-foreground: 280 30% 98%;
+
+    /* Dream blue secondary */
+    --secondary: 250 40% 25%;
+    --secondary-foreground: 280 30% 95%;
+
+    /* Soft muted tones */
+    --muted: 260 25% 15%;
+    --muted-foreground: 280 15% 70%;
+
+    /* Ethereal accent */
+    --accent: 290 50% 35%;
+    --accent-foreground: 280 30% 98%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 280 30% 98%;
+
+    /* Subtle glass borders */
+    --border: 270 30% 20%;
+    --input: 270 30% 18%;
+    --ring: 270 60% 55%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode maintains the cosmic theme */
+    --background: 243 60% 4%;
+    --foreground: 280 30% 96%;
+
+    --card: 260 40% 10%;
+    --card-foreground: 280 25% 94%;
+
+    --popover: 260 40% 10%;
+    --popover-foreground: 280 25% 94%;
+
+    --primary: 270 70% 60%;
+    --primary-foreground: 280 30% 98%;
+
+    --secondary: 250 50% 20%;
+    --secondary-foreground: 280 30% 96%;
+
+    --muted: 260 35% 12%;
+    --muted-foreground: 280 20% 75%;
+
+    --accent: 290 60% 40%;
+    --accent-foreground: 280 30% 98%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 280 30% 98%;
+
+    --border: 270 40% 18%;
+    --input: 270 40% 16%;
+    --ring: 270 70% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(243 60% 8%) 100%);
+    min-height: 100vh;
+    font-family: 'Fira Sans', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'DM Serif Display', ui-serif, Georgia, serif;
+    letter-spacing: 0.01em;
+  }
+
+  /* Custom animations and effects */
+  .dream-float {
+    animation: dreamFloat 6s ease-in-out infinite;
+  }
+
+  .dream-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 40px hsl(var(--primary) / 0.1);
+  }
+
+  .glass-card {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.3);
+    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+  }
+
+  @keyframes dreamFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+
+  @keyframes starTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  .star {
+    animation: starTwinkle 3s ease-in-out infinite;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

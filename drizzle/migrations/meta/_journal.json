@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790327407473,
+      "tag": "0000_dreamscape_core",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790408432352,
+      "tag": "0001_invite_codes",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790408537761,
+      "tag": "0002_notifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790408816281,
+      "tag": "0003_buddy_messages",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1790408986437,
+      "tag": "0004_bedtime_settings",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1790442597156,
+      "tag": "0005_dream_lucid",
+      "breakpoints": true
+    }
+  ]
+}

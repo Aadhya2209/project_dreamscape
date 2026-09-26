@@ -1,0 +1,11 @@
+# DreamScape Roadmap
+- [x] Enable Lovable Cloud
+- [x] Login: email/password + Google, profiles
+- [x] Sleep tracker + trend graphs
+- [x] Dream journal saved per user + AI summaries, recurring themes, voice dreams
+- [x] 6-7-8 breathing game, counting sheep, soundscape mixer
+- [x] Zzz Points, avatars, streaks, DreamBuddies, invite codes, notifications, buddy chat
+- [x] Dream Sky map
+- [ ] Signed-in end-to-end test by the user (two accounts)
+- [x] Bedtime reminders + Night Lock
+- [x] Payments removed — app stays free

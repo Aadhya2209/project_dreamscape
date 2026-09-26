@@ -1,0 +1,1 @@
+ALTER TABLE public.profiles ADD COLUMN invite_code text UNIQUE DEFAULT upper(substr(md5(random()::text || clock_timestamp()::text),1,6));
