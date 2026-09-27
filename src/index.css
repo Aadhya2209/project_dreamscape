@@ -44,6 +44,8 @@ All colors MUST be HSL.
     --border: 270 30% 20%;
     --input: 270 30% 18%;
     --ring: 270 60% 55%;
+    --starlight: 44 95% 90%;
+    --star-cool: 185 90% 84%;
 
     --radius: 0.5rem;
 
@@ -93,6 +95,8 @@ All colors MUST be HSL.
     --border: 270 40% 18%;
     --input: 270 40% 16%;
     --ring: 270 70% 60%;
+    --starlight: 44 95% 90%;
+    --star-cool: 185 90% 84%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -157,5 +161,94 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .celestial-title {
+    color: hsl(var(--foreground));
+    text-shadow: 0 0 28px hsl(var(--primary) / 0.42), 0 3px 20px hsl(var(--background) / 0.9);
+  }
+
+  .cosmic-sky {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .min-h-screen > .cosmic-sky {
+    position: fixed;
+  }
+
+  .cosmic-star {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background: hsl(var(--foreground));
+    box-shadow: 0 0 6px 1px hsl(var(--foreground) / 0.45);
+    animation: cosmicTwinkle 5s ease-in-out infinite;
+  }
+
+  .cosmic-star-warm {
+    background: hsl(var(--starlight));
+    box-shadow: 0 0 8px 1px hsl(var(--starlight) / 0.65);
+  }
+
+  .cosmic-star-cool {
+    background: hsl(var(--star-cool));
+    box-shadow: 0 0 8px 1px hsl(var(--star-cool) / 0.65);
+  }
+
+  .cosmic-galaxy {
+    position: absolute;
+    width: min(55vw, 620px);
+    height: min(27vw, 300px);
+    min-width: 260px;
+    min-height: 145px;
+    top: 7%;
+    right: 4%;
+    transform: rotate(-24deg);
+    opacity: 0.82;
+  }
+
+  .cosmic-galaxy-haze {
+    position: absolute;
+    inset: 8% 4%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, hsl(var(--starlight) / 0.19) 0%, hsl(var(--primary) / 0.20) 21%, hsl(var(--star-cool) / 0.13) 43%, transparent 73%);
+    filter: blur(18px);
+  }
+
+  .cosmic-meteor {
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    border-radius: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--star-cool) / 0.35), hsl(var(--foreground)));
+    filter: drop-shadow(0 0 5px hsl(var(--star-cool)));
+    opacity: 0;
+    animation: cosmicShoot 11s linear infinite;
+  }
+
+  .cosmic-meteor-one { top: 14%; left: 72%; animation-delay: 1s; }
+  .cosmic-meteor-two { top: 36%; left: 94%; animation-delay: 5s; animation-duration: 14s; }
+  .cosmic-meteor-three { top: 7%; left: 39%; animation-delay: 9s; animation-duration: 17s; }
+
+  @keyframes cosmicTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 0.95; transform: scale(1.25); }
+  }
+
+  @keyframes cosmicShoot {
+    0%, 6% { opacity: 0; transform: rotate(-35deg) translateX(0); }
+    7% { opacity: 0.95; }
+    13% { opacity: 0; transform: rotate(-35deg) translateX(-420px); }
+    100% { opacity: 0; transform: rotate(-35deg) translateX(-420px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cosmic-star, .cosmic-meteor, .dream-float { animation: none; }
+    .cosmic-star { opacity: 0.65; }
+    .cosmic-meteor { display: none; }
   }
 }

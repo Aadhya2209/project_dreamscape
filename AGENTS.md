@@ -1,0 +1,1 @@
+Keep the shared decorative night sky in FloatingStars and its semantic color tokens in global CSS so landing and signed-in screens stay visually consistent.

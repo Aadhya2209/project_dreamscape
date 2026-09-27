@@ -20,12 +20,12 @@ const Index = () => {
   const cta = user ? "/app" : "/auth";
   return (
     <div className="min-h-screen relative">
-      <FloatingStars />
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url(${heroImage})` }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background" />
+      <section className="relative min-h-[520px] h-[85svh] max-h-[800px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: `url(${heroImage})` }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/30 to-background" />
+        <FloatingStars />
         <div className="relative z-10 text-center space-y-8 px-4 max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-bold gradient-text dream-float">DreamScape</h1>
+          <h1 className="text-6xl md:text-8xl font-bold celestial-title dream-float">DreamScape</h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             A gentle, gamified sleep wellness companion. Track your nights, decode your dreams, breathe, and rest better.
           </p>
@@ -46,7 +46,10 @@ const Index = () => {
           ))}
         </div>
       </section>
-      <footer className="py-12 text-center border-t border-border/30 text-muted-foreground">✨ DreamScape — rest is a superpower</footer>
+      <footer className="py-12 text-center border-t border-border/30 text-muted-foreground space-y-2">
+        <div>✨ DreamScape — rest is a superpower</div>
+        <div className="text-sm font-display gradient-text">crafted with 🌙 by Aadhya</div>
+      </footer>
     </div>
   );
 };
